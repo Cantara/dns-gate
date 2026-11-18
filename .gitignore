@@ -1,0 +1,6 @@
+node_modules/
+*.db
+*.db-*
+# Local configs and credentials never belong in this repo.
+config.local.json
+secrets/

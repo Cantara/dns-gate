@@ -1,0 +1,25 @@
+{
+  "name": "dns-gate",
+  "version": "0.1.0",
+  "description": "MCP server for DNS at several providers: agents read and propose changes, a person accepts them before they go live",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "dns-gate": "src/cli.ts"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "node src/cli.ts serve",
+    "test": "node --test --test-reporter=spec 'test/**/*.test.ts'",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "openid-client": "6.8.9"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "6.0.3"
+  }
+}
