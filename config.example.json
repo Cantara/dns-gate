@@ -1,0 +1,22 @@
+{
+  "listen": { "host": "127.0.0.1", "port": 8787 },
+  "publicUrl": "http://127.0.0.1:8787",
+  "database": "./dns-gate.db",
+  "providers": {
+    "demo": {
+      "type": "memory",
+      "zones": {
+        "example.rocks": [
+          { "name": "@", "type": "A", "content": "203.0.113.10", "ttl": 600 },
+          { "name": "www", "type": "CNAME", "content": "example.rocks", "ttl": 600 }
+        ]
+      }
+    }
+  },
+  "domains": { "example.rocks": "demo" },
+  "groups": { "demo": ["example.rocks"] },
+  "agents": [
+    { "id": "demo-agent", "tokenSha256": "replace-with-the-hash-from-dns-gate-new-token-0000000000000000", "groups": ["demo"] }
+  ],
+  "people": [{ "email": "you@example.com", "groups": ["demo"] }]
+}
